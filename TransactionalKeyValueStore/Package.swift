@@ -1,0 +1,22 @@
+// swift-tools-version:5.5
+// The swift-tools-version declares the minimum version of Swift required to build this package.
+
+import PackageDescription
+
+let package = Package(
+    name: "TransactionalKeyValueStore",
+    dependencies: [
+    ],
+    targets: [
+        .executableTarget(
+            name: "TransactionalKeyValueStore",
+            dependencies: ["TransactionalKeyValueStoreCore"]),
+        .target(name: "TransactionalKeyValueStoreCore"),
+        .testTarget(
+            name: "TransactionalKeyValueStoreTests",
+            dependencies: ["TransactionalKeyValueStore"]),
+        .testTarget(
+            name: "TransactionalKeyValueStoreCoreTests",
+            dependencies: ["TransactionalKeyValueStoreCore"]),
+    ]
+)
